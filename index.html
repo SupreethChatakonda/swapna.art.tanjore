@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swapna Tanjore Art</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/shop.css?v=3">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <h1 id="shop-title">Swapna Art</h1>
+      <p id="shop-tagline" class="tagline"></p>
+      <a id="header-contact" class="contact-link" href="#" target="_blank" rel="noopener">Chat on WhatsApp</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="gallery" class="gallery" aria-live="polite"></section>
+    <p id="empty-message" class="empty-message" hidden>No paintings here yet — please check back soon.</p>
+  </main>
+
+  <footer class="site-footer">
+    <p>Every painting is handmade and one of a kind. To order, tap a painting and send the order on WhatsApp.</p>
+    <p id="footer-contact"></p>
+  </footer>
+
+  <!-- Order form dialog -->
+  <div id="order-modal" class="modal" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="order-heading">
+      <button id="order-close" class="modal-close" aria-label="Close">&times;</button>
+      <div id="order-summary" class="order-summary"></div>
+      <h2 id="order-heading">Your details</h2>
+      <form id="order-form">
+        <label>
+          Your name
+          <input type="text" id="cust-name" required autocomplete="name">
+        </label>
+        <label>
+          Your phone number
+          <input type="tel" id="cust-phone" required autocomplete="tel">
+        </label>
+        <label>
+          Delivery address
+          <textarea id="cust-address" rows="3" required></textarea>
+        </label>
+        <label>
+          Quantity
+          <input type="number" id="cust-qty" min="1" value="1" required>
+        </label>
+        <p id="order-total" class="order-total"></p>
+        <button type="submit" class="btn btn-whatsapp">Send order on WhatsApp</button>
+        <p class="form-note">This opens WhatsApp with your order ready to send to the artist.</p>
+      </form>
+    </div>
+  </div>
+
+  <script src="config.js?v=3"></script>
+  <script src="data.js?v=3"></script>
+  <script src="js/shop.js?v=3"></script>
+</body>
+</html>

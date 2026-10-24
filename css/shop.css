@@ -1,0 +1,304 @@
+/* Swapna Tanjore Art — traditional Tanjore-inspired theme:
+   deep maroon ground with gold motifs, ivory panels, gold trim. */
+
+:root {
+  --bg: #571b1b;
+  --bg-dark: #471313;
+  --ivory: #f9f3e4;
+  --ivory-warm: #f3e9d2;
+  --gold: #c9a227;
+  --gold-soft: #e3c766;
+  --gold-dark: #a67c00;
+  --ink: #3a2415;
+  --muted: #7d6a4f;
+  --maroon: #6b1f1f;
+  --line: #d9c896;
+  --sold: #9b8f79;
+  --whatsapp: #1faf57;
+}
+
+* { box-sizing: border-box; }
+
+[hidden] { display: none !important; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.55;
+  background-color: var(--bg);
+  /* subtle traditional paisley-and-dot motif in muted gold */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72'%3E%3Cg fill='none' stroke='%23e3c766' stroke-opacity='0.10' stroke-width='1.2'%3E%3Cpath d='M26 10 C40 6 52 16 50 30 C48 44 32 52 20 44 C8 36 12 14 26 10 Z'/%3E%3C/g%3E%3Cg fill='%23e3c766' fill-opacity='0.10'%3E%3Ccircle cx='30' cy='28' r='2.5'/%3E%3Ccircle cx='66' cy='66' r='2.5'/%3E%3Ccircle cx='6' cy='66' r='2.5'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Header */
+.site-header {
+  background: linear-gradient(180deg, var(--ivory) 0%, var(--ivory-warm) 100%);
+  border-top: 6px solid var(--gold);
+  border-bottom: none;
+  outline: 1px solid var(--gold-dark);
+  outline-offset: -10px;
+  padding: 2.4rem 1rem 3.2rem;
+  text-align: center;
+  /* paisley band along the bottom edge, like a saree border */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='26' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Crect width='48' height='26' fill='%23571b1b'/%3E%3Cg fill='none' stroke='%23e3c766' stroke-opacity='0.9' stroke-width='1.3'%3E%3Cpath d='M14 13 C20 5 30 5 34 13 C30 21 20 21 14 13 Z'/%3E%3C/g%3E%3Ccircle cx='24' cy='13' r='1.8' fill='%23e3c766'/%3E%3Ccircle cx='0' cy='13' r='1.8' fill='%23e3c766'/%3E%3Ccircle cx='48' cy='13' r='1.8' fill='%23e3c766'/%3E%3C/svg%3E"),
+    linear-gradient(180deg, var(--ivory) 0%, var(--ivory-warm) 100%);
+  background-repeat: repeat-x, no-repeat;
+  background-position: bottom, center;
+  background-size: auto 26px, auto;
+}
+
+.header-inner { max-width: 900px; margin: 0 auto; }
+
+.site-header h1 {
+  margin: 0;
+  font-family: "Rozha One", Georgia, "Times New Roman", serif;
+  font-size: clamp(2.2rem, 7vw, 3.6rem);
+  font-weight: normal;
+  letter-spacing: 0.04em;
+  color: var(--maroon);
+}
+
+.tagline {
+  margin: 0.4rem 0 1.1rem;
+  color: var(--gold-dark);
+  font-style: italic;
+}
+
+.contact-link {
+  display: inline-block;
+  background: var(--maroon);
+  color: var(--ivory);
+  text-decoration: none;
+  padding: 0.55rem 1.4rem;
+  border-radius: 4px;
+  border: 1px solid var(--gold);
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+}
+
+.contact-link:hover { background: var(--bg-dark); }
+
+/* Gallery */
+.gallery {
+  max-width: 1100px;
+  margin: 2.2rem auto;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.8rem;
+}
+
+.painting-card {
+  background: linear-gradient(180deg, var(--ivory) 0%, var(--ivory-warm) 100%);
+  border: 1px solid var(--gold);
+  box-shadow: 0 0 0 3px var(--ivory-warm), 0 0 0 4px var(--gold-dark), 0 4px 12px rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.painting-card.sold { opacity: 0.7; }
+
+.painting-image-wrap {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: #e9dfc4;
+  border-bottom: 3px double var(--gold-dark);
+  /* temple-arch curve, like a Tanjore painting frame */
+  border-radius: 999px 999px 0 0 / 70px 70px 0 0;
+  overflow: hidden;
+}
+
+.painting-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.badge {
+  position: absolute;
+  top: 0.7rem;
+  left: 0.7rem;
+  padding: 0.2rem 0.7rem;
+  border-radius: 3px;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: var(--ivory);
+  border: 1px solid var(--gold-dark);
+  color: #2c6e3f;
+}
+
+.badge.sold {
+  background: #efe9da;
+  color: var(--sold);
+  border-color: #c9bfa6;
+}
+
+.painting-body {
+  padding: 1rem 1.1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  flex: 1;
+}
+
+.painting-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: normal;
+  color: var(--maroon);
+}
+
+.painting-price {
+  color: var(--gold-dark);
+  font-size: 1.15rem;
+}
+
+.painting-desc {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  flex: 1;
+}
+
+.btn {
+  border: none;
+  border-radius: 4px;
+  padding: 0.65rem 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.btn-whatsapp {
+  background: var(--whatsapp);
+  color: #fff;
+  width: 100%;
+}
+
+.btn-whatsapp:hover { background: #178f47; }
+
+.sold-note {
+  margin-top: 0.5rem;
+  text-align: center;
+  color: var(--sold);
+  font-style: italic;
+}
+
+.empty-message {
+  text-align: center;
+  color: var(--ivory);
+  padding: 3rem 1rem;
+}
+
+/* Footer */
+.site-footer {
+  margin-top: 3rem;
+  padding: 3rem 1rem 2.2rem;
+  text-align: center;
+  color: var(--ivory-warm);
+  font-size: 0.92rem;
+  background-color: var(--bg-dark);
+  border-top: 4px solid var(--gold);
+  /* kolam-style dotted band along the top */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='22'%3E%3Crect width='36' height='22' fill='%23471313'/%3E%3Cg fill='%23e3c766' fill-opacity='0.8'%3E%3Ccircle cx='6' cy='11' r='2'/%3E%3Ccircle cx='18' cy='5' r='1.5'/%3E%3Ccircle cx='18' cy='17' r='1.5'/%3E%3Ccircle cx='30' cy='11' r='2'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-position: top;
+  background-size: auto 22px;
+}
+
+/* Order modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(30, 8, 8, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 10;
+}
+
+.modal-card {
+  background: linear-gradient(180deg, var(--ivory) 0%, var(--ivory-warm) 100%);
+  border: 1px solid var(--gold);
+  border-radius: 6px;
+  max-width: 420px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 1.6rem;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.9rem;
+  border: none;
+  background: none;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--muted);
+}
+
+.order-summary {
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1rem;
+  background: var(--ivory);
+}
+
+.order-summary p { margin: 0.2rem 0; }
+.order-summary .sum-title { font-size: 1.1rem; color: var(--maroon); }
+.order-summary .sum-price { color: var(--gold-dark); }
+
+.modal-card h2 {
+  margin: 0 0 0.8rem;
+  font-weight: normal;
+  font-size: 1.3rem;
+  color: var(--maroon);
+}
+
+#order-form label {
+  display: block;
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+}
+
+#order-form input,
+#order-form textarea {
+  width: 100%;
+  margin-top: 0.25rem;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  font: inherit;
+  background: #fffdf6;
+}
+
+#order-form input:focus,
+#order-form textarea:focus {
+  outline: 2px solid var(--gold);
+  outline-offset: -1px;
+}
+
+.order-total {
+  font-size: 1.05rem;
+  color: var(--gold-dark);
+  margin: 0.4rem 0 0.2rem;
+}
+
+.form-note {
+  font-size: 0.82rem;
+  color: var(--muted);
+  text-align: center;
+  margin: 0.6rem 0 0;
+}
